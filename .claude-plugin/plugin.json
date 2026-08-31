@@ -1,0 +1,12 @@
+{
+  "name": "design-engine",
+  "description": "Adaptive product design intake that turns a vague interface idea into a structured design direction, one reusable generation prompt, and build notes.",
+  "version": "1.0.0",
+  "author": {
+    "name": "jonaskahn",
+    "url": "https://github.com/jonaskahn"
+  },
+  "skills": [
+    "./skills/design-engine"
+  ]
+}
