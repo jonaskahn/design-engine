@@ -1,10 +1,10 @@
 # Content, Blog, and Documentation Branch
 
-Use for blogs, editorial sites, knowledge bases, API reference sites, changelogs, and other long-form or reference content. This branch's scope explicitly includes documentation, knowledge base, and changelog surfaces.
+Use for blogs, editorial sites, knowledge bases, API reference sites, changelogs, and other long-form or reference content.
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - the surface being designed: index, article, category, search results, or changelog;
 - content type: editorial, technical documentation, reference, or mixed;
@@ -12,7 +12,7 @@ Collect only what is missing:
 - primary action, such as reading, subscribing, or finding a specific answer;
 - available content volume, categorization, and versioning needs.
 
-Do not invent article content, authorship, publish dates, or version history.
+Do not invent: article content, authorship, publish dates, or version history.
 
 ## Branch decisions
 
@@ -56,6 +56,15 @@ Only include code-block treatment when the content is genuinely technical.
 - No versioning needed
 - Version switcher in navigation
 - Per-page "applies to version X" notice
+
+### Reader affordances (optional)
+
+- Copy page as Markdown
+- `llms.txt` or other machine-readable export
+- Print-friendly view
+- None
+
+Offer only for documentation and reference content.
 
 ## Required states
 

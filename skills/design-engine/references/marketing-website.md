@@ -1,10 +1,10 @@
 # Marketing Website Branch
 
-Use for product websites, landing pages, lead-generation pages, launch pages, and other conversion-focused experiences. This core hosts four variants for specialized landing-page types: [event-page.md](variants/event-page.md), [nonprofit-donation.md](variants/nonprofit-donation.md), [booking.md](variants/booking.md), and [saas-onboarding.md](variants/saas-onboarding.md) when signup itself is the surface being designed. Read at most one variant alongside this core.
+Use for product websites, landing pages, lead-generation pages, launch pages, and other conversion-focused experiences.
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - product or offer and its real capabilities;
 - target audience and problem being addressed;
@@ -14,7 +14,7 @@ Collect only what is missing:
 - available product visuals and brand assets;
 - real proof that may be used, such as approved metrics, logos, testimonials, or case studies.
 
-Never invent claims, outcomes, customers, testimonials, prices, guarantees, or integrations.
+Do not invent: claims, outcomes, customers, testimonials, prices, guarantees, or integrations.
 
 ## Branch decisions
 
@@ -48,17 +48,10 @@ Never invent claims, outcomes, customers, testimonials, prices, guarantees, or i
 - Alternating left-right sections
 - Timeline or process story
 
-### Card usage
-
-- Avoid cards where possible
-- Use cards in feature sections
-- Use cards only for proof
-- Use cards throughout
-
 ### Trust evidence
 
 - Verified metrics or outcomes
-- Approved customer-logo strip
+- Approved customer-logo strip (only logos the user has approved)
 - Real testimonial cards
 - Case-study section
 - No social proof available; use a clearly labeled placeholder or omit the section

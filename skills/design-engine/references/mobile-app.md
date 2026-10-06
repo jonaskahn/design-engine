@@ -4,7 +4,7 @@ Use for native or hybrid mobile app screens. Do not use for responsive web pages
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - the screen or flow being designed;
 - target platform: iOS, Android, or both;
@@ -15,12 +15,11 @@ Collect only what is missing:
 
 ## Branch decisions
 
-### Platform and design-system baseline
+### Platform approach
 
-- Follow iOS Human Interface Guidelines
-- Follow Material Design
-- Custom design system
-- Brand-uniform across both platforms rather than platform-native
+- Platform-native on each platform (current iOS Human Interface Guidelines and Material 3)
+- Shared design system with light platform adaptation
+- Fully custom brand experience on both platforms
 
 ### Navigation model
 
@@ -49,12 +48,6 @@ Collect only what is missing:
 - Bottom sheet for secondary actions
 - Full-screen modal for focused tasks
 - Minimal modal use
-
-### Platform fidelity
-
-- Strict platform-native conventions
-- Cross-platform consistency with light platform adaptation
-- Fully custom brand experience on both platforms
 
 ## Required states
 

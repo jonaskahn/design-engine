@@ -4,7 +4,7 @@ Use for portfolios, résumés, personal brands, creator sites, and individual pr
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - the person's name or a placeholder;
 - role, identity, or positioning statement;
@@ -13,7 +13,7 @@ Collect only what is missing:
 - primary action, such as viewing work, contacting, hiring, following, or downloading a résumé;
 - available portrait, project imagery, résumé, social links, and brand assets.
 
-Do not invent biography, employers, clients, project outcomes, contact details, or social accounts.
+Do not invent: biography, employers, clients, project outcomes, contact details, or social accounts.
 
 ## Branch decisions
 
@@ -52,13 +52,6 @@ Ask about navigation only when the content volume makes the choice consequential
 - Alternating editorial layout
 
 Clarify the project detail path when relevant: inline summary, dedicated case-study page, modal, or external link.
-
-### Card usage
-
-- Avoid cards where possible
-- Use cards in supporting content
-- Use cards only for projects
-- Use cards throughout
 
 ### Contact presentation
 

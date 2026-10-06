@@ -1,10 +1,17 @@
 # Redesign Overlay
 
-Use when the user wants to improve an existing page, screen, or template. This is an overlay, not a standalone branch: read this file **plus** the core reference for the surface being redesigned (for example `ecommerce.md` for a storefront, `content-docs.md` for a documentation site, `application-ui.md` for a dashboard). If the surface type is unclear, default the core to `marketing-website.md` or `application-ui.md`. The chosen core's required context, decision catalog, and required states still apply — this file adds only what redesigning changes about the interview.
+Use when the user wants to improve an existing page, screen, or template. This is an overlay, not a standalone branch: read this file **plus** the core reference for the surface being redesigned (for example `ecommerce.md` for a storefront, `content-docs.md` for a documentation site, `application-ui.md` for a dashboard). The chosen core's required context, decision catalog, and required states still apply — this file adds only what redesigning changes about the interview.
+
+## Contents
+
+- Inspect before interviewing
+- Required context
+- Branch decisions (preserve, improvement, depth, layout, navigation, color, typography, cards, imagery)
+- Output emphasis
 
 ## Inspect before interviewing
 
-If the user supplied a URL, screenshot, design file, or codebase, inspect it before asking design questions. Record:
+If the user supplied a URL, screenshot, design file, or codebase, inspect it before asking design questions: extract the design with `existing-design.md` and lock it. Also record:
 
 - current structure and hierarchy;
 - recognizable brand elements;
@@ -16,7 +23,7 @@ If no source is available, request one when visual fidelity or preservation matt
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - why the redesign is happening;
 - target audience and primary action;

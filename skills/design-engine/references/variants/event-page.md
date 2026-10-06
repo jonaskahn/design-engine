@@ -1,6 +1,6 @@
 # Event and Conference Variant
 
-Hosted by [marketing-website.md](../marketing-website.md). Read the marketing core for hero, navigation, feature narrative, and CTA questions; use this file only for what an event page adds.
+Host core: marketing-website. Covers only what an event page adds.
 
 ## Required context
 
@@ -8,7 +8,7 @@ Hosted by [marketing-website.md](../marketing-website.md). Read the marketing co
 - real speakers, agenda, sponsors, and ticket pricing available;
 - registration deadline or capacity constraints, if real.
 
-Never invent speakers, agenda items, sponsors, prices, capacity, or deadlines.
+Do not invent: speakers, agenda items, sponsors, prices, capacity, or deadlines.
 
 ## Branch decisions
 

@@ -4,7 +4,7 @@ Use for product listing pages, product detail pages, cart, checkout, account are
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - the surface being designed: listing, detail, cart, checkout, account, or search results;
 - category or catalog scope and typical item count;
@@ -13,7 +13,7 @@ Collect only what is missing:
 - real product data available: prices, variants, images, stock, shipping, reviews;
 - payment, fulfillment, or booking constraints that affect checkout.
 
-Do not invent prices, stock levels, shipping times, return windows, review counts, ratings, or payment methods.
+Do not invent: prices, stock levels, shipping times, return windows, review counts, ratings, or payment methods.
 
 ## Branch decisions
 
@@ -58,13 +58,16 @@ Do not invent promotional pricing unless the user supplies real figures.
 - Side drawer cart
 - Mini cart preview only
 
-### Checkout flow
+### Checkout structure (choose one)
 
 - Single-page checkout
 - Multi-step checkout
 - Accordion-style checkout
+
+### Checkout options (combine as needed)
+
 - Guest checkout allowed
-- Express wallet options (Apple Pay, Google Pay, etc.) if genuinely available
+- Express wallet options (Apple Pay, Google Pay, etc.), only if genuinely available
 
 Define the minimum necessary fields. Do not request unnecessary personal data.
 

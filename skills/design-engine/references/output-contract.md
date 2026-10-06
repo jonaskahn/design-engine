@@ -1,33 +1,38 @@
 # Output Contract
 
-Use this contract after the direction is sufficiently defined. Return exactly three top-level sections in the user's language.
+Use after the direction is sufficiently defined. Return exactly four top-level sections in the user's language.
 
-## Selected UI Direction
+## 1. Selected UI Direction
 
-Summarize decisions in compact bullets under whichever labels are relevant:
+Summarize the decisions in compact bullets under whichever labels are relevant:
 
 - Product context: experience, audience, goal, and primary action
 - Experience structure: sections, navigation, workspace, content flow, or task flow
 - Visual system: character, palette, theme strategy, type, imagery, controls, and density
 - Behavior: interaction, motion, device priority, responsive adaptation, and text direction or localization when in scope
-- Constraints: preserved elements, assets, placeholders, privacy treatment, accessibility conformance target when set, and assumptions
+- Constraints: preserved elements, assets, placeholders, privacy treatment, accessibility target when set, and assumptions
+
+Tag each decision's origin inline — `[user]`, `[locked: source]`, `[reference: name]`, or `[default]` — so the reader can see what was chosen versus inferred. When a reference design is used, add one line naming it and the verification date.
 
 Do not list questionnaire numbers. Convert selections into a coherent direction and resolve compatible combinations in plain language.
 
-## Final Prompt
+## 2. Final Prompt
 
-Write one self-contained prompt that another design or implementation agent can use without reading the interview. Put it in a fenced text block for easy copying.
+One self-contained prompt another design or implementation agent can use without reading the interview. Put it in a fenced text block for easy copying.
 
 Include, in a natural order:
 
 1. **Task and context** — what to design, for whom, why, and the primary action or workflow.
 2. **Required content or functionality** — real sections, content, data, tasks, and states; retain labeled placeholders where facts or assets are missing.
 3. **Structure and hierarchy** — composition, narrative order, information architecture, navigation, and emphasis.
-4. **Visual system** — palette, theme strategy (with both light and dark token sets when both themes are in scope), typography, imagery, spacing, controls, cards, and other selected treatments.
-5. **Responsive and accessible behavior** — device priority, adaptations, semantic structure, contrast, focus, keyboard behavior, reduced motion, the accessibility conformance target when set, text direction and expansion tolerance when localization is in scope, and theme parity (contrast and non-color status cues hold in every shipped theme).
-6. **Interaction and motion** — meaningful feedback, transitions, filtering, details, forms, or task-specific behavior.
+4. **Visual system** — palette, theme strategy (both light and dark token sets when both ship), typography, imagery, spacing, controls, cards, and other treatments. Give exact values when locked or referenced.
+5. **Responsive and accessible behavior** — the Baselines from SKILL.md, plus device priority and adaptations, the accessibility conformance target when set, text direction and expansion tolerance when localization is in scope.
+6. **Interaction and motion** — feedback, transitions, filtering, details, forms, or task-specific behavior.
 7. **Constraints and preservation** — brand rules, existing content or functionality, technical constraints, privacy-safe placeholders, and prohibited invention.
 8. **Acceptance criteria** — observable qualities that indicate the result satisfies the selected direction.
+9. **Avoid** — the named anti-slop list for this surface (≤12 items), drawn from `anti-slop.md`. A vague "avoid a generic AI look" is not acceptable; name the patterns.
+
+When a reference design is used, say "in the spirit of <name>'s design language" — never instruct reproduction of its logos, assets, or unlicensed typefaces.
 
 Use direct instructions. Avoid commentary about the interview, multiple competing directions, vague adjectives without visible consequences, and claims that the result is production-ready when it is only a visual exploration.
 
@@ -38,29 +43,43 @@ Use direct instructions. Avoid commentary about the interview, multiple competin
 - For a coding agent with a codebase, require reuse of the existing stack, components, tokens, and conventions unless the user authorized replacement.
 - Do not add framework-specific instructions unless the framework is known.
 
-## Build Notes
+## 3. DESIGN.md
 
-Add only practical consequences that are useful outside the final prompt, such as:
+Always present. One fenced `markdown` block the user can save at the repo root.
+
+Follow `design-md-template.md` and the Google Labs DESIGN.md spec: YAML front matter tokens (`colors`, `typography`, `rounded`, `spacing`, `components`), then the sections Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
+
+- When a DESIGN.md already exists, output a merged update that preserves every existing token and marks additions.
+- Values not yet decided are written `TBD` in prose and left out of the YAML. Never invent a hex value or typeface to fill a gap.
+- Token values must match the Final Prompt's visual system exactly.
+- The Do's and Don'ts section carries the same anti-slop list as item 9 above.
+
+Tell the user to save it at the repo root as `DESIGN.md`.
+
+## 4. Build Notes
+
+Only practical consequences useful outside the final prompt:
 
 - assets or copy the user still needs to supply;
 - risky responsive or interaction areas;
 - implementation dependencies implied by the choices;
 - privacy-sensitive placeholders that must remain placeholders;
-- validation priorities.
+- validation priorities;
+- reference verification status (verified against <URL> on <date>, or "stored tokens, unverified");
+- font licensing notes;
+- anti-slop patterns the user or a locked design chose deliberately.
 
-Do not repeat the selected direction or restate the full prompt. If no extra note is useful, write `No additional build notes.` in the user's language.
+Do not repeat the selected direction or restate the full prompt. If no extra note is useful, write `No additional build notes.`
 
 ## Final quality check
 
-Before responding, verify that:
+Before responding, verify:
 
-- the prompt contains no invented facts or confidential details that should be generalized;
-- the three sections agree with each other;
-- all high-impact choices are represented;
-- responsive and accessibility requirements are concrete;
-- contrast and non-color status cues hold in every theme the direction ships;
-- right-to-left mirroring is specified when text direction is in scope;
-- the accessibility conformance target, if any was set, is stated once and never contradicted;
-- branch-specific requirements are present;
+- no invented facts or confidential details that should be generalized;
+- all four sections agree with each other;
+- every high-impact choice is represented;
+- the slop check passed and item 9 names specific patterns;
+- DESIGN.md tokens match the Final Prompt values exactly;
+- no locked value was altered;
 - placeholders and assumptions are explicit;
 - only one final direction is delivered.

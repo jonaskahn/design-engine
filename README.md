@@ -3,9 +3,9 @@
 
 # ▓▓ DESIGN ENGINE ▓▓
 
-`[ vague idea :: adaptive interview :: design direction :: reusable prompt ]`
+`[ vague idea :: adaptive interview :: design direction :: reusable prompt · DESIGN.md ]`
 
-[![version](https://img.shields.io/badge/version-1.0.0-10b981?style=flat-square)](.claude-plugin/plugin.json)
+[![version](https://img.shields.io/badge/version-1.1.0-10b981?style=flat-square)](.claude-plugin/plugin.json)
 [![format](https://img.shields.io/badge/format-agent_skill-10b981?style=flat-square)](https://agentskills.io)
 [![license](https://img.shields.io/badge/license-GPL--3.0-10b981?style=flat-square)](LICENSE)
 
@@ -54,9 +54,12 @@ What happens next:
 
 ```text
 1. keeps every fact already in your request
-2. asks only the missing, consequential decisions — grouped, 3-6 per turn
+2. discovers and locks any existing design (DESIGN.md, tokens, theme, brand)
 3. routes to ONE experience type below, plus at most one variant
-4. hands back: Selected UI Direction · Final Prompt · Build Notes
+4. offers 2-3 named reference design languages (Apple, IBM Carbon, Stripe, ...)
+5. asks only the missing, consequential decisions — grouped, 3-6 per turn
+6. runs an anti-slop check so nothing generic slips through
+7. hands back: Selected UI Direction · Final Prompt · DESIGN.md · Build Notes
 ```
 
 <br/>
@@ -93,10 +96,37 @@ overlays onto whichever type above matches the surface.
 
 <br/>
 
+### ▸ existing design
+
+Point the skill at a codebase, URL, screenshot, or brand guide and it
+locks what's already there — palette, type, tokens, components — and
+builds on top of it instead of inventing over it. Exact values are
+reused; gaps become questions, never guesses.
+
+### ▸ reference design languages
+
+No existing design? It offers 2-3 named references tuned to the
+experience type and audience — Apple, IBM Carbon, Airtable, Arc, BMW,
+Stripe, Material 3, and 20 more. Pick one and it researches the
+latest official version before writing your prompt.
+
+### ▸ anti-slop
+
+Generic AI defaults (purple gradients, Inter-everywhere, cream +
+terracotta, pill buttons, glass blur, "Elevate your workflow") are
+banned by default. If you choose one deliberately, it warns once and
+keeps going. The output always includes a named "Avoid" list so
+whatever builds it stays specific to your product.
+
+<br/>
+
 ### ▸ what it won't do
 
 - invent copy, prices, testimonials, metrics, or brand assets — missing
   ones stay labeled placeholders
+- copy a reference brand's logo, trademark, or unlicensed proprietary
+  typeface — inspiration only
+- present generic AI-default styling unless you explicitly chose it
 - send secrets, private URLs, or customer data into an external prompt
   without you saying so
 - ship production code — output is a direction and a prompt, not a build
@@ -111,9 +141,14 @@ design-engine/
 └── skills/design-engine/
     ├── SKILL.md             entrypoint: workflow + routing
     └── references/          loaded on demand, one type at a time
+        ├── existing-design.md    discover + lock an existing design
+        ├── design-references.md  reference design index + research procedure
+        ├── anti-slop.md          banned-by-default catalog + check
+        ├── design-md-template.md DESIGN.md skeleton
         ├── shared-intake.md
-        ├── output-contract.md
+        ├── output-contract.md    4 sections (incl. DESIGN.md)
         ├── <experience-type>.md  × 8
         ├── redesign.md
-        └── variants/         × 5
+        ├── brands/               × 26 reference token files
+        └── variants/             × 5
 ```

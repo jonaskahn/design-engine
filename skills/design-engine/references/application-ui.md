@@ -1,10 +1,10 @@
 # Application UI Branch
 
-Use for application screens, dashboards, admin panels, internal tools, and workflow-oriented interfaces. Do not ask marketing-page hero questions unless the requested screen genuinely includes a product introduction. This core hosts three variants: [saas-onboarding.md](variants/saas-onboarding.md), [community-social.md](variants/community-social.md), and [booking.md](variants/booking.md) when booking is a flow inside a larger product. Read at most one variant alongside this core.
+Use for application screens, dashboards, admin panels, internal tools, and workflow-oriented interfaces. Do not ask marketing-page hero questions unless the requested screen genuinely includes a product introduction.
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - the screen or workflow being designed;
 - user role and task frequency;
@@ -35,27 +35,13 @@ If a codebase is available, inspect its existing navigation, components, tokens,
 
 Choose navigation from information architecture and task frequency, not visual preference alone. Include labels or accessible names for icon-led navigation.
 
-### Primary workspace
+### Workspace emphasis
 
-- Charts and metrics
-- Tables and lists
-- Forms and actions
-- Mixed workspace
-
-### Data presentation
-
-- Large summary values with charts
-- Table-led presentation
+- Metrics and charts lead
+- Tables and lists lead
 - Balanced charts and tables
-- Summary cards with a detailed panel
-- Workflow-led presentation where data is secondary
-
-### Chart and table emphasis
-
-- Charts matter more
-- Tables matter more
-- Charts and tables are balanced
-- Workflow matters more than data display
+- Summary cards with a detail panel
+- Forms and workflow lead, data secondary
 
 Do not add charts when values, trends, or comparisons are not meaningful. Define table sorting, selection, pagination, and bulk actions only when relevant.
 
@@ -79,13 +65,6 @@ Keep search and filters separate from record-detail presentation. Specify active
 - Dedicated detail page
 
 Choose a modal only for bounded work that does not require deep navigation or extensive comparison.
-
-### Card usage
-
-- Avoid cards where possible
-- Use cards only for summaries
-- Use cards for charts and summaries
-- Use cards for most modules
 
 ## Required states
 

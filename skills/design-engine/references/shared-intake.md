@@ -1,42 +1,40 @@
 # Shared Intake
 
-Use this catalog after the experience branch and core product facts are known. Ask only about unresolved decisions that will materially change the result.
+Catalog of decisions to draw from after the branch and core product facts are known. Ask only about unresolved decisions that will materially change the result. A locked existing design answers its own questions (see `existing-design.md`); a chosen reference design supplies option 1 for palette, type, shape, and motion.
+
+## Contents
+
+- Core fact support
+- Grouping
+- Composition (character, organization, density, card usage)
+- Color system (palette, brand dependency, accent)
+- Theme strategy
+- Typography
+- Imagery
+- Controls
+- Motion
+- Device priority
+- Accessibility target (gated)
+- Localization and text direction (gated)
+- Completion check
 
 ## Core fact support
 
-Ask for goals and audiences in free form when possible. If the user needs choices, offer only the relevant examples.
+Ask for goals and audiences in free form. Offer examples only when the user needs choices, and do not force them when the real goal or audience is more specific.
 
-### Goal examples
+Goal examples: present a personal brand; present work or projects; explain a product and build trust; capture signups, leads, contact requests, or demo bookings; help users understand information or complete tasks; improve the clarity, conversion, or mobile behavior of an existing experience.
 
-- Present a personal brand
-- Present work or projects
-- Explain a product and build trust
-- Capture signups, leads, contact requests, or demo bookings
-- Help users understand information or complete tasks
-- Improve the quality, clarity, conversion, or mobile behavior of an existing experience
-
-### Audience examples
-
-- Recruiters or hiring managers
-- Consumers
-- Clients or partners
-- Internal teams
-- Investors
-- Developers or designers
-
-Do not force the user into these examples when their actual goal or audience is more specific.
+Audience examples: recruiters or hiring managers; consumers; clients or partners; internal teams; investors; developers or designers.
 
 ## Grouping
 
-Group related decisions instead of asking one question at a time:
+Group related decisions instead of asking one at a time. Present a relevant subset, not every option; the user may combine compatible choices or answer in free form.
 
 1. composition, organization, and density;
 2. palette, theme strategy, brand dependency, and accent;
 3. typography and imagery;
 4. controls, motion, and device priority;
-5. accessibility target and localization, only when gated (see below).
-
-Do not present every option when a shorter, relevant subset will do. The user may combine compatible choices or answer in free form.
+5. accessibility target and localization, only when gated.
 
 ## Composition
 
@@ -48,7 +46,7 @@ Do not present every option when a shorter, relevant subset will do. The user ma
 - Showcase-led
 - Custom direction
 
-Translate the selected character into visible decisions about hierarchy, whitespace, imagery, and emphasis. Do not leave abstract adjectives unexplained in the final prompt.
+Translate the character into visible decisions about hierarchy, whitespace, imagery, and emphasis. Do not leave abstract adjectives unexplained in the final prompt.
 
 ### Content organization
 
@@ -68,7 +66,14 @@ Translate the selected character into visible decisions about hierarchy, whitesp
 - Compact and efficiency-first
 - Information-dense
 
-Reconcile organization and density when they conflict. For example, a dense card grid and a very spacious presentation require an explicit priority.
+Reconcile organization and density when they conflict. A dense card grid and a very spacious presentation need an explicit priority.
+
+### Card usage
+
+- Avoid cards where possible
+- Cards for one content type only (projects, proof, or summaries)
+- Cards for most modules
+- Custom
 
 ## Color system
 
@@ -81,16 +86,15 @@ Reconcile organization and density when they conflict. For example, a dense card
 - Deep burgundy with muted gold
 - Warm brown-gray with off-white
 - Pure white with cool gray
-- Off-white with warm gray
 - Pale blue-gray with white
-- Cream white with soft gold
 - Light neutral with a cool accent
 - Light neutral with a warm accent
-- Dark with limited bright highlights
 - Brand-color-led
 - Multicolor with stronger contrast
 - High-contrast color blocking
 - Custom palette
+
+Palette options are starting points for the user, not defaults to pick on their behalf. Choose from audience, content, and brand; a palette named in `anti-slop.md` is offered only when the user, a locked design, or a chosen reference supplies it.
 
 ### Brand dependency
 
@@ -98,28 +102,15 @@ Reconcile organization and density when they conflict. For example, a dense card
 - Use the existing brand system
 - Brand system is not decided yet
 
-If an existing or custom palette is selected, collect the actual colors, tokens, or asset reference when available. Otherwise preserve a labeled placeholder.
+When an existing or custom palette is selected, collect the actual colors, tokens, or asset reference. Otherwise keep a labeled placeholder.
 
 ### Accent
 
-- Blue
-- Cyan
-- Green
-- Yellow
-- Gold
-- Orange
-- Red
-- Purple
-- Pink
-- Existing brand color
-- No obvious accent
-- Custom accent
-
-Do not select an accent that undermines the requested contrast, tone, or brand constraints.
+Blue, cyan, green, yellow, gold, orange, red, purple, pink, existing brand color, no obvious accent, or a custom accent. Do not select an accent that undermines the requested contrast, tone, or brand constraints.
 
 ## Theme strategy
 
-Ask this in every intake — it changes every palette decision that follows.
+Ask in every intake, because it changes every palette decision that follows.
 
 ### Theme support
 
@@ -129,48 +120,42 @@ Ask this in every intake — it changes every palette decision that follows.
 
 ### Default behavior (if both)
 
-- Follow system `prefers-color-scheme` with a manual override toggle (recommended)
+- Follow system `prefers-color-scheme` with a manual override (recommended)
 - Default light with a manual toggle
 - Default dark with a manual toggle
 - Force one mode regardless of system setting
 
 ### Dark base surface (if dark is in scope)
 
-- Dark gray, approximately `#121212` (Material default, recommended)
-- Pure black `#000000` (OLED battery savings)
-- Branded dark, tinted with the brand hue
+- Neutral dark gray (roughly `#121212`–`#1C1B1F`; avoid pure black for large surfaces)
+- Pure black (OLED battery savings; watch halation on light text)
+- Tinted dark derived from the brand hue (the Material 3 approach: tone-based surface roles rather than white overlays)
 
-Reconcile the theme choice with the palette direction. Elevation in dark mode comes from surface lightness, not shadow. A palette chosen for light mode needs explicit dark-mode neutrals rather than a mechanical inversion.
+Reconcile the theme with the palette direction. Elevation in dark mode comes from lighter surface tones, not shadow. A palette chosen for light mode needs explicit dark neutrals, not a mechanical inversion.
 
 ## Typography
 
-- Sans serif throughout
-- Serif headlines with sans-serif body
-- Editorial or magazine-like
-- Minimal and neutral
-- Technical and product-like
-- Futuristic
-- Premium or luxury-oriented
-- Friendly and soft
-- Expressive and brand-forward
-- Steady and professional
-- Custom typography direction
+Choose two things.
 
-Describe hierarchy, weight, scale, and reading character. Name a specific typeface only when the user supplied it, licensing is understood, or the target environment provides it.
+**Pairing:** single sans family; serif display with sans body; sans with monospace for technical content; custom.
+
+**Voice:** neutral, editorial, technical, warm, expressive. State the visible consequence of the voice: x-height, stroke contrast, tracking, weight range, and scale ratio.
+
+Describe hierarchy, weight, scale, and reading character. Name a typeface only when the user supplied it, a locked design or chosen reference uses it, or licensing is understood and the target environment provides it. Never default to the typefaces listed in `anti-slop.md`.
 
 ## Imagery
 
 - Real people or photography
 - Product screenshots or interface visuals
-- Abstract background treatments
+- Pattern or texture derived from the brand's own assets
 - Illustration or graphic-led visuals
-- 3D visuals
+- 3D visuals, only with a stated purpose
 - Video or moving-image-led visuals
 - Mixed photography and product visuals
 - Minimal imagery with layout-led presentation
 - Custom imagery direction
 
-Record whether assets already exist. Use explicit placeholders rather than inventing missing photography, screenshots, or brand artwork.
+Record whether assets already exist. Use explicit placeholders instead of inventing photography, screenshots, or brand artwork.
 
 ## Controls
 
@@ -180,13 +165,12 @@ Record whether assets already exist. Use explicit placeholders rather than inven
 - Rounded outline button
 - Square solid button
 - Square outline button
-- Fully pill-shaped button
 - Text-only action
 - Solid primary with outline secondary
 - One oversized primary action with secondary actions de-emphasized
 - Custom control style
 
-For application interfaces, interpret this as the broader control language rather than styling every action identically.
+For application interfaces, read this as the broader control language rather than styling every action identically. Corner radius should come from the locked or referenced shape scale.
 
 ## Motion
 
@@ -197,7 +181,7 @@ For application interfaces, interpret this as the broader control language rathe
 - Highly dynamic showcase motion
 - Custom motion direction
 
-Specify where motion adds orientation, feedback, or storytelling. Avoid decorative animation that competes with the main task. Always provide a reduced-motion equivalent for nonessential movement.
+Specify where motion gives orientation, feedback, or storytelling. Decorative animation that competes with the main task is excluded.
 
 ## Device priority
 
@@ -210,21 +194,24 @@ Device priority changes composition and interaction priorities; it never permits
 
 ## Accessibility target (gated)
 
-Do not ask by default. Ask only when the request signals a regulated, public-sector, enterprise, or EU-procurement context, or names a specific standard. Otherwise state the default below as an assumption and move on.
+Ask only when the request signals a regulated, public-sector, or enterprise context; an EU consumer-facing product covered by the European Accessibility Act (e-commerce, banking, transport, e-books, communications); EU procurement; or a named standard. Otherwise state WCAG 2.2 AA as the assumption and move on.
 
 - Best-effort baseline
-- WCAG 2.1 AA (the EU legal floor via EN 301 549 v3.2.1)
-- WCAG 2.2 AA (default when the topic is asked)
-- WCAG AAA
+- WCAG 2.2 AA (default when asked; the level EN 301 549 v4.1.1 adopted)
+- WCAG 2.1 AA (only when a contract or regulation cites it explicitly)
+- WCAG 2.2 AAA for selected criteria
 - A named in-house or client standard
 
-What each level changes: AA requires 4.5:1 contrast for body text and 3:1 for large text and non-text UI components; AAA requires 7:1 and 4.5:1 respectively; 2.2 adds focus-appearance, minimum target size, dragging alternatives, consistent help, and redundant entry requirements.
+What each level changes:
 
-Do not re-ask reduced motion, focus visibility, or keyboard access here — the skill's baseline requirements already mandate them for every direction. Escalate to further detail only for AAA or a named in-house standard.
+- **AA:** 4.5:1 contrast for body text, 3:1 for large text and non-text UI components. WCAG 2.2 AA adds focus not obscured, 24×24 CSS px minimum target size, dragging alternatives, consistent help, redundant entry, and accessible authentication.
+- **AAA:** 7:1 and 4.5:1 contrast, enhanced focus appearance, 44×44 targets.
+
+Reduced motion, focus visibility, and keyboard access are already mandated by the skill's baselines, so do not re-ask them. Escalate detail only for AAA or a named in-house standard.
 
 ## Localization and text direction (gated)
 
-Do not ask by default. Ask only when the request mentions multiple languages, markets, or regions; contains non-Latin content; or the codebase already has i18n infrastructure. Otherwise assume single language, left-to-right, and layouts that tolerate longer strings without truncation.
+Ask only when the request mentions multiple languages, markets, or regions; contains non-Latin content; or the codebase already has i18n infrastructure. Otherwise assume a single language, left-to-right, and layouts that tolerate longer strings without truncation.
 
 ### Language scope
 
@@ -243,8 +230,8 @@ Do not ask by default. Ask only when the request mentions multiple languages, ma
 - Fixed layouts (single language, controlled copy)
 - Flexible layouts that tolerate roughly 35% text expansion (short UI strings can expand far more)
 
-When right-to-left is in scope, mirror layout, directional icons, and progress or timeline order — not only text alignment. Use locale-aware formatting for dates, numbers, and currency. Never bake translatable text into images.
+When right-to-left is in scope, mirror layout, directional icons, and progress or timeline order, not only text alignment. Use locale-aware formatting for dates, numbers, and currency. Never bake translatable text into images.
 
 ## Completion check
 
-Before moving to the output, confirm internally that the selected choices form one coherent system. Reconcile theme strategy with the palette direction, and the accessibility target with the theme's contrast ratios. Ask one targeted question if a conflict would otherwise force the final prompt to guess.
+Before the handoff, confirm the choices form one coherent system. Reconcile theme strategy with palette, the accessibility target with the theme's contrast ratios, and everything with the locked design and chosen reference. Ask one targeted question if a conflict would otherwise force the final prompt to guess.

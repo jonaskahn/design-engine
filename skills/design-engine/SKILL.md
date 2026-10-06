@@ -1,24 +1,27 @@
 ---
 name: design-engine
-description: Guide an adaptive product design intake and turn the decisions into a structured design direction, one reusable generation prompt, and practical build notes. Use for personal websites, marketing or conversion pages, product websites, application UIs, dashboards, e-commerce and marketplace listings, blogs and documentation sites, mobile app screens, AI chat and agent interfaces, email templates, and redesigns of any of these when the user needs help choosing a concrete interface direction. Do not use for implementation-only requests that already provide a complete design specification.
+description: Runs an adaptive design intake that turns a vague interface idea into one concrete, non-generic design direction, a reusable generation prompt, a DESIGN.md, and build notes. Detects and preserves an existing design (DESIGN.md, design tokens, theme files, brand palette) and otherwise grounds suggestions in named reference design languages such as Apple, IBM Carbon, Stripe, or Linear. Use when the user asks how a UI should look or be structured — personal sites, landing and product pages, dashboards and app screens, storefronts and listings, blogs and docs, mobile app screens, AI chat or agent interfaces, email templates, or a redesign — or wants a design prompt, a DESIGN.md, or a design that avoids the generic AI look. Not for implementation-only requests that already include a complete design spec.
+license: GPL-3.0
+metadata:
+  version: "1.1.0"
 ---
 
 # Design Engine
 
-Translate product intent into an actionable interface direction. Ask only for decisions that are missing and consequential; do not force the user through a fixed questionnaire.
+Translate product intent into an interface direction that is specific to this product and free of generic AI-default styling. Ask only for decisions that are missing and consequential; do not force the user through a fixed questionnaire.
 
 ## Workflow
 
-1. Read the request and retain every decision the user has already made.
-2. Identify the core branch and, if relevant, one variant or the redesign overlay. See Branch routing below.
-3. Establish any missing core facts: what is being designed, its audience, its main goal, its essential content or tasks, and the primary action users should take.
-4. Read [references/shared-intake.md](references/shared-intake.md), the one matching core reference, and at most one variant or overlay reference. Do not read other core references.
-5. Ask unresolved questions in compact groups. Prefer 3–6 related decisions per turn. Accept option numbers, labels, or free-form answers.
-6. Follow up only when:
-   - a custom choice lacks a concrete value;
-   - two choices materially conflict;
-   - a missing fact would make the result generic or misleading.
-7. When the direction is sufficiently defined, read [references/output-contract.md](references/output-contract.md) and produce the handoff.
+1. **Retain** every decision already in the request.
+2. **Discover the existing design.** Read [references/existing-design.md](references/existing-design.md) and run its discovery whenever a codebase, URL, screenshot, or attachment exists. A found design is *locked*: suggestions extend it and never replace it.
+3. **Route** to one core (plus at most one variant or the redesign overlay) using the table below, and establish the missing core facts: what is being designed, its audience, its goal, its essential content or tasks, and the primary action. Each reference lists its *Required context* — collect only what is missing.
+4. **Ground the direction.** If no design is locked, read [references/design-references.md](references/design-references.md) and offer 2–3 reference design languages that fit the experience type and audience, each with one line on why it fits. The user may decline and go custom.
+5. **Lock-in research.** When a reference is chosen, read `references/brands/<slug>.md`, then refresh it from the official source using the procedure in `design-references.md`.
+6. **Interview** with [references/shared-intake.md](references/shared-intake.md) plus the core reference. Prefer 3–6 related decisions per turn. Accept option numbers, labels, or free-form answers.
+7. **Slop check.** Before the handoff, run the check in [references/anti-slop.md](references/anti-slop.md) against the direction and the prompt.
+8. **Handoff** per [references/output-contract.md](references/output-contract.md).
+
+Precedence when rules collide: the user's explicit instruction, then a locked existing design, then the chosen reference design, then catalog defaults. Anti-slop bans apply at every level except where a higher level explicitly chose the pattern.
 
 Do not ask again for information that can be inferred confidently from the request, an attached artifact, or the existing codebase. State nonessential assumptions instead of extending the interview.
 
@@ -45,7 +48,7 @@ Do not ask again for information that can be inferred confidently from the reque
 
 ### Overlay
 
-- Redesign of an existing experience: read [references/redesign.md](references/redesign.md) plus the core reference for the surface being redesigned. Inspect the supplied page, screenshot, or code before asking visual questions. If the surface type is unclear, default the core to marketing website or application UI.
+- Redesign of an existing experience: read [references/redesign.md](references/redesign.md) plus the core reference for the surface. Infer the surface from the inspected source; if still unclear, ask one branch-selection question.
 
 If the branch is unclear, ask one direct branch-selection question before loading a branch reference.
 
@@ -53,9 +56,7 @@ If the branch is unclear, ask one direct branch-selection question before loadin
 
 Load exactly one core. A variant never loads without its host core, and at most one variant loads per request.
 
-When a request genuinely spans two cores, choose the core that governs the surface actually being designed, state that choice to the user, and borrow at most the secondary core's *Required context* list — never its decision catalog. For example, a landing page that promotes an AI chat product is `marketing-website.md`, not `ai-chat.md`; the chat branch is for designing the chat surface itself.
-
-Do not mix two cores' decision catalogs in one interview.
+When a request genuinely spans two cores, choose the core that governs the surface actually being designed, state that choice to the user, and borrow at most the secondary core's *Required context* list — never its decision catalog. Do not mix two cores' decision catalogs in one interview.
 
 ## Interview behavior
 
@@ -67,7 +68,7 @@ Do not mix two cores' decision catalogs in one interview.
 - When the user asks for recommendations, recommend a coherent combination and explain the tradeoff briefly.
 - Do not prematurely write the final prompt while a high-impact decision remains unresolved.
 
-## Baseline requirements
+## Baselines
 
 Apply these unless the user explicitly provides a stronger or conflicting requirement:
 
@@ -88,13 +89,8 @@ Do not turn these baselines into extra interview questions unless the product ha
 - Generalize confidential context and use labeled placeholders for missing copy, assets, screenshots, metrics, testimonials, or customer names.
 - Do not invent product claims, social proof, capabilities, or brand assets.
 - Distinguish visual exploration from production-ready implementation.
+- Reference designs are inspiration: borrow principles, scales, and patterns — never logos, trademarks, product imagery, or proprietary typefaces the user has not licensed.
 
 ## Completion
 
-Return exactly the three sections defined in `references/output-contract.md`:
-
-1. `Selected UI Direction`
-2. `Final Prompt`
-3. `Build Notes`
-
-If the user names a target tool, adapt the prompt's vocabulary to that tool without changing the selected direction. Otherwise keep the prompt tool-neutral.
+Read `references/output-contract.md` and return its four sections.

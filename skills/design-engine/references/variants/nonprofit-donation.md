@@ -1,6 +1,6 @@
 # Nonprofit and Donation Variant
 
-Hosted by [marketing-website.md](../marketing-website.md). Read the marketing core for hero, navigation, feature narrative, and CTA questions; use this file only for what a donation or fundraising page adds.
+Host core: marketing-website. Covers only what a donation or fundraising page adds.
 
 ## Required context
 
@@ -9,7 +9,7 @@ Hosted by [marketing-website.md](../marketing-website.md). Read the marketing co
 - donation processor or payment mechanism available;
 - fund designations, if multiple causes or campaigns exist.
 
-Never invent impact figures, beneficiary stories, financial ratios, charity ratings, or tax-deductibility claims.
+Do not invent: impact figures, beneficiary stories, financial ratios, charity ratings, or tax-deductibility claims.
 
 ## Branch decisions
 

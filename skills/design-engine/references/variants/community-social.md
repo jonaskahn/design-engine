@@ -1,6 +1,6 @@
 # Community and Social Platform Variant
 
-Hosted by [application-ui.md](../application-ui.md). Read the application core for layout, navigation, and workspace questions; use this file only for what a feed-and-community surface adds.
+Host core: application-ui. Covers only what a feed-and-community surface adds.
 
 ## Required context
 
@@ -8,7 +8,7 @@ Hosted by [application-ui.md](../application-ui.md). Read the application core f
 - whether content is user-generated, curated, or both;
 - moderation model: self-moderated, staffed moderation, or automated.
 
-Never invent user names, avatars, post content, or engagement counts. Do not design mechanics that misrepresent actual activity levels.
+Do not invent: user names, avatars, post content, or engagement counts. Do not design mechanics that misrepresent actual activity levels.
 
 ## Branch decisions
 

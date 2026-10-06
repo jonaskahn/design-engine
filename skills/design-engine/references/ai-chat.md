@@ -4,7 +4,7 @@ Use for chat, assistant, and agent interfaces: conversational input, streaming r
 
 ## Required context
 
-Collect only what is missing:
+Missing facts to collect:
 
 - what the assistant or agent does and its intended user;
 - primary interaction: open-ended chat, task-specific assistant, or agent that takes actions;
@@ -12,7 +12,7 @@ Collect only what is missing:
 - input types supported: text only, attachments, voice;
 - existing product surface this is embedded in, if any.
 
-Never imply capabilities the assistant does not actually have.
+Do not invent: assistant capabilities, tools, data access, or sources.
 
 ## Branch decisions
 
@@ -40,9 +40,8 @@ Never imply capabilities the assistant does not actually have.
 - Text input with send button
 - Multiline input with keyboard-shortcut send
 - Attachment and voice input support
-- Visible stop or cancel control during generation
 
-The stop control must remain reachable at all times during streaming.
+Requirement, not a choice: a visible stop control that stays reachable at all times during generation.
 
 ### Streaming presentation
 
@@ -52,9 +51,23 @@ The stop control must remain reachable at all times during streaming.
 
 ### Agent transparency
 
-- Hidden reasoning, response only
-- Collapsed step summary, expandable
-- Fully visible step-by-step trace
+- Response only
+- Collapsed step summary with a reasoning summary, expandable
+- Expanded step timeline (tool calls, inputs, results) with reasoning summaries
+
+Models expose reasoning as summaries, not raw chain of thought; design for summaries.
+
+### Action approval (for agents that take actions)
+
+- Confirm every consequential action
+- Auto-run safe actions, confirm consequential ones
+- Autonomous with undo and an audit log
+
+### Output surface
+
+- Inline in the conversation
+- Side panel or canvas for long artifacts
+- Both
 
 ### Citations and sourcing
 
@@ -71,6 +84,10 @@ Never present generated content as sourced without a real, verifiable citation.
 - User-initiated stop
 - Tool or agent step running
 - Tool or agent step failed
+- Awaiting user approval
+- Long-running task progress
+- User message sent mid-run (queue or steer)
+- Conversation or context limit reached
 - Refusal or stated limitation
 - Rate-limited or unavailable
 - Network error and retry

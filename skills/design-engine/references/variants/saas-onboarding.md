@@ -1,6 +1,6 @@
 # SaaS Onboarding and Empty States Variant
 
-Hosted by [application-ui.md](../application-ui.md) for in-product onboarding, or [marketing-website.md](../marketing-website.md) when signup itself is the surface being designed. Read the relevant core first; use this file only for what onboarding and empty states add.
+Host core: application-ui (in-product) or marketing-website (when signup is the surface). Covers only what onboarding and empty states adds.
 
 ## Required context
 

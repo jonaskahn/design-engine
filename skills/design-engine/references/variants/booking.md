@@ -1,6 +1,6 @@
 # Booking and Reservation Variant
 
-Hosted by [marketing-website.md](../marketing-website.md) for a standalone booking page, or [application-ui.md](../application-ui.md) when booking is a flow inside a larger product. Read the relevant core first; use this file only for what booking adds.
+Host core: marketing-website or application-ui (standalone page vs flow inside a product). Covers only what booking adds.
 
 ## Required context
 
@@ -9,7 +9,7 @@ Hosted by [marketing-website.md](../marketing-website.md) for a standalone booki
 - required customer information at booking time;
 - cancellation, rescheduling, or deposit policy, if real.
 
-Never fabricate availability, time slots, or pricing.
+Do not invent: availability, time slots, or pricing.
 
 ## Branch decisions
 
