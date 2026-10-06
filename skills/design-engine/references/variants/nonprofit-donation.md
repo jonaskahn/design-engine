@@ -1,6 +1,6 @@
 # Nonprofit and Donation Variant
 
-Host core: marketing-website. Covers only what a donation or fundraising page adds.
+Variant of marketing-website. Adds only what a donation or fundraising page adds.
 
 ## Required context
 
@@ -54,6 +54,3 @@ Do not invent: impact figures, beneficiary stories, financial ratios, charity ra
 - Campaign ended
 - Donation processing error
 
-## Output emphasis
-
-The prompt must define donation flow placement, amount and frequency presentation, and transparency treatment without fabricating any figures or claims.

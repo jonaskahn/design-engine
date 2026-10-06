@@ -1,6 +1,6 @@
 # Application UI Branch
 
-Use for application screens, dashboards, admin panels, internal tools, and workflow-oriented interfaces. Do not ask marketing-page hero questions unless the requested screen genuinely includes a product introduction.
+Use for application screens, dashboards, admin panels, internal tools, and workflow-oriented interfaces.
 
 ## Required context
 
@@ -78,6 +78,6 @@ Include only states relevant to the workflow, but do not omit obvious operationa
 - destructive-action confirmation;
 - selection, hover, focus, and keyboard behavior.
 
-## Output emphasis
+## Emphasis
 
-The final prompt must define information architecture, navigation, workspace hierarchy, task flow, data density, search/filter behavior, detail behavior, responsive adaptation, and required states. It must prioritize efficient completion over decorative presentation.
+Prioritize efficient completion over decorative presentation.

@@ -1,7 +1,5 @@
 # Marketing Website Branch
 
-Use for product websites, landing pages, lead-generation pages, launch pages, and other conversion-focused experiences.
-
 ## Required context
 
 Missing facts to collect:
@@ -66,6 +64,6 @@ Do not invent: claims, outcomes, customers, testimonials, prices, guarantees, or
 
 For forms, define the minimum necessary fields and a clear success state. Do not request sensitive information without a product need.
 
-## Output emphasis
+## Emphasis
 
-The final prompt must establish the conversion path, section sequence, proof strategy, CTA hierarchy, responsive treatment, and placeholder policy. Visual prominence must support the primary conversion action rather than compete with it.
+Visual prominence must support the primary conversion action.

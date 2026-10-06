@@ -1,34 +1,30 @@
 # Shared Intake
 
-Catalog of decisions to draw from after the branch and core product facts are known. Ask only about unresolved decisions that will materially change the result. A locked existing design answers its own questions (see `existing-design.md`); a chosen reference design supplies option 1 for palette, type, shape, and motion.
+Catalog of decisions to draw from after the branch and core product facts are known. Ask only about unresolved decisions that will materially change the result. A locked existing design answers its own questions (see `existing-design.md`); a chosen reference design supplies the palette, type, shape, and motion choices.
 
 ## Contents
 
 - Core fact support
 - Grouping
-- Composition (character, organization, density, card usage)
-- Color system (palette, brand dependency, accent)
+- Composition
+- Color system
 - Theme strategy
 - Typography
 - Imagery
 - Controls
 - Motion
 - Device priority
-- Accessibility target (gated)
-- Localization and text direction (gated)
+- Accessibility target
+- Localization and text direction
 - Completion check
 
 ## Core fact support
 
 Ask for goals and audiences in free form. Offer examples only when the user needs choices, and do not force them when the real goal or audience is more specific.
 
-Goal examples: present a personal brand; present work or projects; explain a product and build trust; capture signups, leads, contact requests, or demo bookings; help users understand information or complete tasks; improve the clarity, conversion, or mobile behavior of an existing experience.
-
-Audience examples: recruiters or hiring managers; consumers; clients or partners; internal teams; investors; developers or designers.
-
 ## Grouping
 
-Group related decisions instead of asking one at a time. Present a relevant subset, not every option; the user may combine compatible choices or answer in free form.
+Group related decisions instead of asking one at a time.
 
 1. composition, organization, and density;
 2. palette, theme strategy, brand dependency, and accent;
@@ -197,15 +193,10 @@ Device priority changes composition and interaction priorities; it never permits
 Ask only when the request signals a regulated, public-sector, or enterprise context; an EU consumer-facing product covered by the European Accessibility Act (e-commerce, banking, transport, e-books, communications); EU procurement; or a named standard. Otherwise state WCAG 2.2 AA as the assumption and move on.
 
 - Best-effort baseline
-- WCAG 2.2 AA (default when asked; the level EN 301 549 v4.1.1 adopted)
+- WCAG 2.2 AA (default when asked)
 - WCAG 2.1 AA (only when a contract or regulation cites it explicitly)
 - WCAG 2.2 AAA for selected criteria
 - A named in-house or client standard
-
-What each level changes:
-
-- **AA:** 4.5:1 contrast for body text, 3:1 for large text and non-text UI components. WCAG 2.2 AA adds focus not obscured, 24×24 CSS px minimum target size, dragging alternatives, consistent help, redundant entry, and accessible authentication.
-- **AAA:** 7:1 and 4.5:1 contrast, enhanced focus appearance, 44×44 targets.
 
 Reduced motion, focus visibility, and keyboard access are already mandated by the skill's baselines, so do not re-ask them. Escalate detail only for AAA or a named in-house standard.
 
@@ -230,7 +221,7 @@ Ask only when the request mentions multiple languages, markets, or regions; cont
 - Fixed layouts (single language, controlled copy)
 - Flexible layouts that tolerate roughly 35% text expansion (short UI strings can expand far more)
 
-When right-to-left is in scope, mirror layout, directional icons, and progress or timeline order, not only text alignment. Use locale-aware formatting for dates, numbers, and currency. Never bake translatable text into images.
+When right-to-left is in scope, mirror layout, directional icons, and progress or timeline order, not only text alignment. Never bake translatable text into images.
 
 ## Completion check
 

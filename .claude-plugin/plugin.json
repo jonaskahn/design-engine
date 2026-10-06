@@ -1,7 +1,7 @@
 {
   "name": "design-engine",
   "description": "Adaptive design intake that turns a vague idea into one non-generic design direction, a reusable generation prompt, a DESIGN.md, and build notes. Honors an existing design, grounds choices in reference design languages, and bans generic AI-default styling by default.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "jonaskahn",
     "url": "https://github.com/jonaskahn"

@@ -2,14 +2,6 @@
 
 Run this whenever the request includes or implies a codebase, URL, screenshot, design file, brand guide, or attachment. A design found here is **locked**: suggestions extend it and never replace it, and no value is invented over it.
 
-## Contents
-
-- Where to look
-- Extract a locked inventory
-- Locking rules
-- Partial designs
-- Existing DESIGN.md
-
 ## Where to look
 
 Read only design-bearing files. Never open `.env`, credentials, or secrets.
@@ -40,14 +32,9 @@ Record each value with its source `file:line` (or URL, or attachment name):
 - Use exact values; never "close to".
 - Derive a missing role from the locked set (a dark neutral from the brand hue, for example) and label it *derived*.
 - A gap the locked set cannot settle becomes one question, not an invention.
-- A conflict between the request and the locked design becomes one question; never resolve it silently.
+- A conflict with the locked design follows the precedence order in `SKILL.md`: an explicit instruction is applied and stated once, and a request that only implies a conflict becomes one question.
 - Skip every interview question the locked design already answers, and state it as "locked from <source>".
-- A locked pattern that `anti-slop.md` lists as a tell is allowed because the user chose it: keep it, and note it once in Build Notes.
 
 ## Partial designs
 
-When only some slots exist (a palette without type, for example), lock what exists. Use `design-references.md` only for the open slots, and choose a reference compatible with the locked values.
-
-## Existing DESIGN.md
-
-The handoff's DESIGN.md section is then a merged update: preserve every existing token and mark each addition.
+When only some slots exist (a palette without type, for example), lock what exists and offer references for the open slots only, compatible with the locked values — `SKILL.md` step 4. The handoff's DESIGN.md section is then a merged update: see `design-md-template.md`.

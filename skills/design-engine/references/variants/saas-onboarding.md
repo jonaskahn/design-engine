@@ -1,6 +1,6 @@
 # SaaS Onboarding and Empty States Variant
 
-Host core: application-ui (in-product) or marketing-website (when signup is the surface). Covers only what onboarding and empty states adds.
+Variant of application-ui (in-product) or marketing-website (when signup is the surface). Adds only what onboarding and empty states adds.
 
 ## Required context
 
@@ -52,6 +52,3 @@ Each empty state must specify what happened, why, and one clear next action:
 
 Distinguish loading state from empty state explicitly — never show an empty-state message while data is still loading.
 
-## Output emphasis
-
-The prompt must define the onboarding shape, activation moment, and the full empty-state catalog with a specific next action for each.

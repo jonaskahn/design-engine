@@ -1,6 +1,6 @@
 # Output Contract
 
-Use after the direction is sufficiently defined. Return exactly four top-level sections in the user's language.
+Use after the direction is sufficiently defined. Return exactly four top-level sections.
 
 ## 1. Selected UI Direction
 
@@ -12,9 +12,9 @@ Summarize the decisions in compact bullets under whichever labels are relevant:
 - Behavior: interaction, motion, device priority, responsive adaptation, and text direction or localization when in scope
 - Constraints: preserved elements, assets, placeholders, privacy treatment, accessibility target when set, and assumptions
 
-Tag each decision's origin inline — `[user]`, `[locked: source]`, `[reference: name]`, or `[default]` — so the reader can see what was chosen versus inferred. When a reference design is used, add one line naming it and the verification date.
+Tag each decision's origin inline — `[user]`, `[locked: source]`, `[reference: name]`, or `[default]` — so the reader can see what was chosen versus inferred. When a reference design is used, add one line naming it; its verification status belongs in Build Notes.
 
-Do not list questionnaire numbers. Convert selections into a coherent direction and resolve compatible combinations in plain language.
+Convert selections into a coherent direction in plain language rather than restating option labels or numbers, and resolve compatible combinations.
 
 ## 2. Final Prompt
 
@@ -30,11 +30,11 @@ Include, in a natural order:
 6. **Interaction and motion** — feedback, transitions, filtering, details, forms, or task-specific behavior.
 7. **Constraints and preservation** — brand rules, existing content or functionality, technical constraints, privacy-safe placeholders, and prohibited invention.
 8. **Acceptance criteria** — observable qualities that indicate the result satisfies the selected direction.
-9. **Avoid** — the named anti-slop list for this surface (≤12 items), drawn from `anti-slop.md`. A vague "avoid a generic AI look" is not acceptable; name the patterns.
+9. **Avoid** — the named anti-slop list for this surface, per `anti-slop.md` → "Where the result goes".
 
-When a reference design is used, say "in the spirit of <name>'s design language" — never instruct reproduction of its logos, assets, or unlicensed typefaces.
+When a reference design is used, say "in the spirit of <name>'s design language".
 
-Use direct instructions. Avoid commentary about the interview, multiple competing directions, vague adjectives without visible consequences, and claims that the result is production-ready when it is only a visual exploration.
+Write directly: one direction, visible consequences instead of adjectives, no interview commentary.
 
 ### Target-tool adaptation
 
@@ -45,16 +45,11 @@ Use direct instructions. Avoid commentary about the interview, multiple competin
 
 ## 3. DESIGN.md
 
-Always present. One fenced `markdown` block the user can save at the repo root.
+Always present: one fenced `markdown` block following `design-md-template.md` and the Google Labs DESIGN.md spec.
 
-Follow `design-md-template.md` and the Google Labs DESIGN.md spec: YAML front matter tokens (`colors`, `typography`, `rounded`, `spacing`, `components`), then the sections Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
+The block is emitted even when the file is also written to disk, and section 4 follows it in the same response. This section never ends the turn, and neither does a tool call that writes the file.
 
-- When a DESIGN.md already exists, output a merged update that preserves every existing token and marks additions.
-- Values not yet decided are written `TBD` in prose and left out of the YAML. Never invent a hex value or typeface to fill a gap.
-- Token values must match the Final Prompt's visual system exactly.
-- The Do's and Don'ts section carries the same anti-slop list as item 9 above.
-
-Tell the user to save it at the repo root as `DESIGN.md`.
+Tell the user to save it at the repo root as `DESIGN.md`. When the run continues into implementation per `SKILL.md` Completion, write the file there yourself — the write satisfies the save, never the block, and never the response.
 
 ## 4. Build Notes
 
@@ -75,11 +70,8 @@ Do not repeat the selected direction or restate the full prompt. If no extra not
 
 Before responding, verify:
 
-- no invented facts or confidential details that should be generalized;
-- all four sections agree with each other;
-- every high-impact choice is represented;
-- the slop check passed and item 9 names specific patterns;
+- all four sections are present, with Build Notes last — DESIGN.md was not the last thing said;
+- the four sections agree with each other;
 - DESIGN.md tokens match the Final Prompt values exactly;
-- no locked value was altered;
-- placeholders and assumptions are explicit;
+- the slop check passed and item 9 names specific patterns;
 - only one final direction is delivered.

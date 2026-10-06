@@ -1,6 +1,6 @@
 # Event and Conference Variant
 
-Host core: marketing-website. Covers only what an event page adds.
+Variant of marketing-website. Adds only what an event page adds.
 
 ## Required context
 
@@ -49,6 +49,3 @@ Do not invent: speakers, agenda items, sponsors, prices, capacity, or deadlines.
 - Sold out
 - Registration closed
 
-## Output emphasis
-
-The prompt must define agenda structure, speaker presentation, and registration path without inventing any event details not supplied.

@@ -10,7 +10,9 @@ Skeleton for the handoff's DESIGN.md section, following the Google Labs DESIGN.m
 - Component properties: `backgroundColor`, `textColor`, `typography`, `rounded`, `padding`, `size`, `height`, `width`. Variants are separate keys such as `button-primary-hover`.
 - Reference tokens as `{colors.primary}`. Outside `components`, a reference must point to a single value, not a group.
 - Locked values are copied exactly. Values not yet decided are written `TBD` in prose and left out of the YAML; never invent a hex value or typeface to fill a gap.
-- When a DESIGN.md already exists, output the merged file: preserve every existing token and mark additions in a `## Do's and Don'ts` note or a leading comment.
+- Token values must match the Final Prompt's visual system exactly.
+- The `Do's and Don'ts` list is the same anti-slop list as the Final Prompt's Avoid item — same items, not a second list.
+- When a DESIGN.md already exists, output the merged file: preserve every existing token unless a higher-precedence rule in `SKILL.md` overrides it, and mark each addition with a trailing YAML comment (`# added`). An overridden value gets a comment naming the source (`# overridden by user instruction`). The spec defines no marker of its own; YAML comments are legal in the front matter.
 - Dark theme: add `colors` entries with a `-dark` suffix (for example `surface-dark`) when both themes ship, and describe the mapping under Colors.
 
 ## Skeleton

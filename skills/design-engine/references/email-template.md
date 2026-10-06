@@ -1,6 +1,6 @@
 # Email Template Branch
 
-Use for marketing campaign emails, newsletters, and transactional emails. Email rendering is fundamentally different from a web page; the constraints below are hard requirements.
+Email rendering is fundamentally different from a web page; the constraints below are hard requirements.
 
 ## Shared-intake carve-out
 
@@ -69,6 +69,6 @@ Do not invent: sender claims, offers, or transactional details.
 - Plain-text version
 - Preheader truncation
 
-## Output emphasis
+## Emphasis
 
-The final prompt must define layout structure, module order, CTA implementation as bulletproof HTML, image fallback behavior, and dark-mode tolerance. State explicitly that output is HTML email markup, not a web page.
+State explicitly that the output is HTML email markup, not a web page.

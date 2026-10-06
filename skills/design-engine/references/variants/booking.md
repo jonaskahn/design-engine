@@ -1,6 +1,6 @@
 # Booking and Reservation Variant
 
-Host core: marketing-website or application-ui (standalone page vs flow inside a product). Covers only what booking adds.
+Variant of marketing-website or application-ui (standalone page vs flow inside a product). Adds only what booking adds.
 
 ## Required context
 
@@ -54,6 +54,3 @@ Do not invent: availability, time slots, or pricing.
 - Booking confirmed
 - Cancel or reschedule flow
 
-## Output emphasis
-
-The prompt must define availability presentation, selection order, and every required state, especially the slot-taken race condition.

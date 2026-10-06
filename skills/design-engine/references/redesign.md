@@ -6,8 +6,8 @@ Use when the user wants to improve an existing page, screen, or template. This i
 
 - Inspect before interviewing
 - Required context
-- Branch decisions (preserve, improvement, depth, layout, navigation, color, typography, cards, imagery)
-- Output emphasis
+- Branch decisions
+- Emphasis
 
 ## Inspect before interviewing
 
@@ -79,13 +79,7 @@ Translate subjective improvements into observable interface changes and acceptan
 
 ### Navigation
 
-- Simple top navigation
-- Transparent floating navigation
-- Solid fixed navigation
-- Side navigation
-- Preserve the existing navigation
-
-Ask only when navigation is present and allowed to change.
+Ask the core's navigation decision only when navigation exists and may change; add "preserve the existing navigation" as an option.
 
 ### Color treatment
 
@@ -117,6 +111,6 @@ Ask only when navigation is present and allowed to change.
 
 Use the shared intake for motion and device priority. Use its other categories only where the redesign leaves those choices open.
 
-## Output emphasis
+## Emphasis
 
-The final prompt must distinguish preserved elements from changes, describe the new hierarchy and visual system, identify responsive and accessibility improvements, and avoid silently removing existing content or functionality.
+Distinguish preserved elements from changes, and never silently remove existing content or functionality.

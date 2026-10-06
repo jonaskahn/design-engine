@@ -1,12 +1,6 @@
 # Anti-Slop
 
-A tell is a default nobody chose. Models regress to the median of their training data, including the model reading this file, so unprompted output drifts toward the same few looks. The ban is on **unchosen** patterns: a pattern is allowed only when the user, a locked existing design, or the chosen reference design explicitly includes it. Then keep it, and note it once in Build Notes as "chosen deliberately".
-
-## Contents
-
-- Catalog of tells
-- The slop check
-- Where the result goes
+A tell is a default nobody chose. Models regress to the median of their training data, so unprompted output drifts toward the same few looks. The ban is on **unchosen** patterns: a pattern is allowed only when the user, a locked existing design, or the chosen reference design explicitly includes it. Then keep it, and note it once in Build Notes as "chosen deliberately".
 
 ## Catalog of tells
 
@@ -70,4 +64,4 @@ Run it after the direction is defined and before the handoff. Repeat until it pa
 
 - The Final Prompt gets an **Avoid** list naming the tells that were not chosen, taken from the categories most relevant to this surface (12 items at most). A vague "avoid a generic AI look" does not count; name the patterns.
 - The DESIGN.md `Do's and Don'ts` section carries the same list.
-- Build Notes records each tell the user or a locked design chose deliberately.
+- Build Notes records each tell the user, a locked design, or the chosen reference design chose deliberately.

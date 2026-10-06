@@ -1,7 +1,5 @@
 # Personal Website Branch
 
-Use for portfolios, résumés, personal brands, creator sites, and individual professional websites.
-
 ## Required context
 
 Missing facts to collect:
@@ -62,6 +60,3 @@ Clarify the project detail path when relevant: inline summary, dedicated case-st
 
 Protect private contact details when the prompt will be sent to an external tool; retain labeled placeholders unless the user approves otherwise.
 
-## Output emphasis
-
-The final prompt must define the narrative order, project presentation, credibility signals, contact path, and how the personal identity remains recognizable across device sizes.

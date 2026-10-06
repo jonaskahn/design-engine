@@ -1,7 +1,5 @@
 # Content, Blog, and Documentation Branch
 
-Use for blogs, editorial sites, knowledge bases, API reference sites, changelogs, and other long-form or reference content.
-
 ## Required context
 
 Missing facts to collect:
@@ -73,6 +71,6 @@ Offer only for documentation and reference content.
 - Table of contents sync on long pages
 - Deprecated or outdated content notice
 
-## Output emphasis
+## Emphasis
 
-The final prompt must define index and article hierarchy, sidebar and navigation model, search behavior, and any versioning treatment. Preserve reading comfort — line length, contrast, and heading hierarchy — as a first-class concern.
+Reading comfort — measure, contrast, and heading hierarchy — is first-class.

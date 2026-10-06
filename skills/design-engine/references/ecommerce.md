@@ -1,6 +1,6 @@
 # E-commerce and Marketplace Branch
 
-Use for product listing pages, product detail pages, cart, checkout, account areas, and marketplace search. Also use for real estate listings, job boards, and general directory listings — they share the same listing-and-facet decisions even when there is no cart.
+Real estate listings, job boards, and general directory listings use this branch too: they share the same listing-and-facet decisions even when there is no cart.
 
 ## Required context
 
@@ -50,8 +50,6 @@ Specify applied-filter chip visibility, clearing behavior, and result count. Kee
 - Price range with variant-driven changes
 - Promotional or strikethrough pricing
 
-Do not invent promotional pricing unless the user supplies real figures.
-
 ### Cart model
 
 - Dedicated cart page
@@ -82,6 +80,3 @@ Define the minimum necessary fields. Do not request unnecessary personal data.
 - Address or form validation
 - Order or application success
 
-## Output emphasis
-
-The final prompt must define listing density, facet behavior, detail-page hierarchy, cart and checkout flow, and every required state. Never present fabricated availability, pricing, or reviews as real.

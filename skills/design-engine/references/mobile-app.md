@@ -1,6 +1,6 @@
 # Mobile App Branch
 
-Use for native or hybrid mobile app screens. Do not use for responsive web pages viewed on mobile — use the relevant web branch with mobile-first device priority instead.
+Use for native or hybrid mobile app screens.
 
 ## Required context
 
@@ -60,6 +60,6 @@ Missing facts to collect:
 - Validation and error
 - Destructive-action confirmation
 
-## Output emphasis
+## Emphasis
 
-The final prompt must define navigation model, screen structure, action placement, and required states. Account for thumb reach, safe areas, minimum touch target size (44pt iOS / 48dp Android), and dynamic type support.
+Account for thumb reach, safe areas, minimum touch target size (44pt iOS / 48dp Android), and dynamic type support.

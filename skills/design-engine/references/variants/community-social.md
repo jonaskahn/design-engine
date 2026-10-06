@@ -1,6 +1,6 @@
 # Community and Social Platform Variant
 
-Host core: application-ui. Covers only what a feed-and-community surface adds.
+Variant of application-ui. Adds only what a feed-and-community surface adds.
 
 ## Required context
 
@@ -61,6 +61,3 @@ Do not invent: user names, avatars, post content, or engagement counts. Do not d
 - Content pending moderation approval
 - Real-time arrival of new content while viewing
 
-## Output emphasis
-
-The prompt must define feed model, thread presentation, moderation affordances, and every required state without fabricating sample content or engagement numbers.

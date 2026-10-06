@@ -1,6 +1,6 @@
 # AI Chat and Agent Interface Branch
 
-Use for chat, assistant, and agent interfaces: conversational input, streaming responses, and tool or agent execution surfaces. Do not use this branch for a marketing page that merely promotes an AI product — route that to the marketing website branch instead.
+Use for chat, assistant, and agent interfaces: conversational input, streaming responses, and tool or agent execution surfaces.
 
 ## Required context
 
@@ -94,6 +94,6 @@ Never present generated content as sourced without a real, verifiable citation.
 - Scroll-to-latest when the user has scrolled up
 - Unsupported attachment type
 
-## Output emphasis
+## Emphasis
 
-The final prompt must define layout, message presentation, streaming behavior, agent transparency, and every required state. Make limitations and failures visible rather than silently hidden.
+Make limitations and failures visible rather than silently hidden.
